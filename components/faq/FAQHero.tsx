@@ -4,7 +4,7 @@ export default function FAQHero() {
       <div className="container mx-auto px-4">
         <div className="max-w-3xl mx-auto text-center">
           <h1 className="text-4xl md:text-5xl font-bold mb-6 gradient-text">Frequently Asked Questions</h1>
-          <p className="text-xl text-gray-200 mb-8 text-black">
+          <p className="text-xl mb-8 text-black">
             Find answers to common questions about our services, processes, and how we can help your business achieve
             measurable results.
           </p>
