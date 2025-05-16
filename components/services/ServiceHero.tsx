@@ -17,24 +17,6 @@ const ServiceHero = () => {
           <p className="text-xl md:text-2xl text-muted-foreground mb-8 max-w-3xl mx-auto">
             We don't just run campaigns — we build systematic engines that drive predictable, measurable growth.
           </p>
-
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-            <Link
-              href="/contact"
-              className="px-8 py-4 rounded-full bg-gradient-to-r from-primary to-secondary text-white font-medium text-lg hover:shadow-lg hover:shadow-primary/20 transition-all duration-300 flex items-center"
-            >
-              Get a free consultation
-              <ArrowRight className="ml-2" size={18} />
-            </Link>
-
-            <Link
-              href="/projects"
-              className="px-8 py-4 rounded-full border border-border bg-transparent hover:bg-card-foreground/5 transition-colors text-lg flex items-center"
-            >
-              View our case studies
-              <ArrowRight className="ml-2" size={18} />
-            </Link>
-          </div>
         </div>
       </div>
     </section>
