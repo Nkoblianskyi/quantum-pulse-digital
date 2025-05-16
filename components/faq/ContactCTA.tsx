@@ -17,10 +17,10 @@ export default function ContactCTA() {
             Contact Us
           </Link>
           <Link
-            href="tel:+18005551234"
+            href="/contact"
             className="px-8 py-3 bg-transparent hover:bg-card border border-primary text-primary hover:text-primary-light font-medium rounded-full transition-colors duration-300"
           >
-            Call (800) 555-1234
+            Contact Us
           </Link>
         </div>
       </div>
