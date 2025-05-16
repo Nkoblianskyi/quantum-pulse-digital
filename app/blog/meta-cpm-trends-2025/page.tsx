@@ -247,7 +247,7 @@ export default function MetaCPMTrendsBlogPost() {
           </p>
           <ul>
             <li>
-              <strong>Challenge</strong>: CPMs increased from $12.50 to $15.25, threatening to reduce ROAS below
+              <strong>Challenge</strong>: CPMs increased from 12.50 to 15.25, threatening to reduce ROAS below
               profitable levels.
             </li>
             <li>

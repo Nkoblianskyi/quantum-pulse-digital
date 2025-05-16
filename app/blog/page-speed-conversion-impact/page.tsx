@@ -134,16 +134,16 @@ export default function PageSpeedConversionBlogPost() {
 
           <ul>
             <li>
-              <strong>Current state</strong>: 3.5 second load time, 3% conversion rate, $100 average order value
+              <strong>Current state</strong>: 3.5 second load time, 3% conversion rate, 100 average order value
               <ul>
-                <li>Monthly revenue: $1,500,000</li>
+                <li>Monthly revenue: 1,500,000</li>
               </ul>
             </li>
             <li>
               <strong>After optimization</strong>: 1.8 second load time, 3.7% conversion rate (23% improvement)
               <ul>
-                <li>Monthly revenue: $1,850,000</li>
-                <li>Additional monthly revenue: $350,000</li>
+                <li>Monthly revenue: 1,850,000</li>
+                <li>Additional monthly revenue: 350,000</li>
               </ul>
             </li>
           </ul>

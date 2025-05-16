@@ -21,7 +21,7 @@ export default function ProjectsPage() {
       results: [
         { metric: "ROAS", value: "3.8x", change: "+217%" },
         { metric: "Conversion Rate", value: "4.7%", change: "+112%" },
-        { metric: "CPA", value: "$28.50", change: "-38%" },
+        { metric: "CPA", value: "28.50", change: "-38%" },
       ],
       tags: ["Goog", "Met", "E-commerce"],
       featured: true,
@@ -36,7 +36,7 @@ export default function ProjectsPage() {
       results: [
         { metric: "Trial Signups", value: "+86%", change: "+86%" },
         { metric: "Trial-to-Paid", value: "32%", change: "+45%" },
-        { metric: "CAC", value: "$420", change: "-35%" },
+        { metric: "CAC", value: "420", change: "-35%" },
       ],
       tags: ["CRO", "UX Design", "SaaS"],
       featured: true,
@@ -50,7 +50,7 @@ export default function ProjectsPage() {
       image: "/1ac3d20c84f7717f653c02f975465785.jpg",
       results: [
         { metric: "Qualified Leads", value: "+124%", change: "+124%" },
-        { metric: "Cost Per Lead", value: "$68", change: "-42%" },
+        { metric: "Cost Per Lead", value: "68", change: "-42%" },
         { metric: "Lead-to-Sale", value: "12%", change: "+50%" },
       ],
       tags: ["Link", "Email Automation", "B2B"],

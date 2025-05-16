@@ -21,12 +21,12 @@ const FaqSection = () => {
     {
       question: "Do you work with businesses in specific industries?",
       answer:
-        "We specialize in working with e-commerce, SaaS, and B2B companies. Our methodologies are particularly effective for businesses with AOVs above $100 and those looking to scale their digital marketing efforts efficiently. We've developed industry-specific playbooks that accelerate results.",
+        "We specialize in working with e-commerce, SaaS, and B2B companies. Our methodologies are particularly effective for businesses with AOVs above 100 and those looking to scale their digital marketing efforts efficiently. We've developed industry-specific playbooks that accelerate results.",
     },
     {
       question: "What's your pricing structure?",
       answer:
-        "We offer customized packages based on your specific needs and goals. Our engagements typically start at $5,000/month for comprehensive marketing management. We also offer project-based work for specific initiatives like funnel audits or analytics setup. Contact us for a personalized quote.",
+        "We offer customized packages based on your specific needs and goals. Our engagements typically start at 5,000/month for comprehensive marketing management. We also offer project-based work for specific initiatives like funnel audits or analytics setup. Contact us for a personalized quote.",
     },
   ]
 

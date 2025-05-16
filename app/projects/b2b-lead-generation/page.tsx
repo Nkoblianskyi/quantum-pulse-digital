@@ -20,8 +20,8 @@ export default function B2BLeadGenerationCaseStudy() {
     },
     {
       metric: "Cost Per Lead",
-      before: "$118",
-      after: "$68",
+      before: "118",
+      after: "68",
       improvement: "-42%",
       icon: <LineChart className="h-6 w-6" />,
     },

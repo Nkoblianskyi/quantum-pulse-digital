@@ -304,7 +304,7 @@ export default function AIMarketingBlogPost() {
               <strong>35% increase in qualified leads</strong> through conversational lead qualification
             </li>
             <li>
-              <strong>$380,000 annual savings</strong> in customer support costs
+              <strong>380,000 annual savings</strong> in customer support costs
             </li>
           </ul>
 

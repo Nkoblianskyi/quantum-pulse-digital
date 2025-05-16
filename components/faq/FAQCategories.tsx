@@ -160,7 +160,7 @@ const faqCategories: FAQCategory[] = [
       {
         question: "What's your minimum monthly investment?",
         answer:
-          "Our managed service packages typically start at $3,000 per month, which includes strategy development, implementation, and ongoing optimization. This doesn't include ad spend, which is paid directly to the advertising platforms. For smaller businesses, we offer scaled-down packages starting at $1,500 per month with a more focused scope.",
+          "Our managed service packages typically start at 3,000 per month, which includes strategy development, implementation, and ongoing optimization. This doesn't include ad spend, which is paid directly to the advertising platforms. For smaller businesses, we offer scaled-down packages starting at 1,500 per month with a more focused scope.",
       },
       {
         question: "Do you charge setup fees?",

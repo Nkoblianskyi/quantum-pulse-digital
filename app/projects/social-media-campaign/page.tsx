@@ -27,8 +27,8 @@ export default function SocialMediaCampaignCaseStudy() {
     },
     {
       metric: "Social Revenue",
-      before: "$42K/mo",
-      after: "$75K/mo",
+      before: "42/mo",
+      after: "75/mo",
       improvement: "+78%",
       icon: <ShoppingBag className="h-6 w-6" />,
     },

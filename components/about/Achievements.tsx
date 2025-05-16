@@ -16,7 +16,7 @@ const Achievements = () => {
     },
     {
       icon: <Globe className="h-8 w-8" />,
-      value: "$42M+",
+      value: "42",
       label: "Ad Spend Managed",
       description: "With an average ROAS improvement of 127%",
     },
