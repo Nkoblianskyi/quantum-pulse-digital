@@ -86,6 +86,24 @@ const Footer = () => {
                   Marketing Automation
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/services/content-strategy"
+                  className="text-muted-foreground hover:text-primary transition-colors flex items-center"
+                >
+                  <ArrowRight size={14} className="mr-2" />
+                  Content Strategy
+                </Link>
+              </li>
+              <li>
+                <Link
+                  href="/services/social-media-management"
+                  className="text-muted-foreground hover:text-primary transition-colors flex items-center"
+                >
+                  <ArrowRight size={14} className="mr-2" />
+                  Social Media
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -128,6 +146,15 @@ const Footer = () => {
                   Contact
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/services"
+                  className="text-muted-foreground hover:text-primary transition-colors flex items-center"
+                >
+                  <ArrowRight size={14} className="mr-2" />
+                  All Services
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -161,6 +188,15 @@ const Footer = () => {
                   Cookie Policy
                 </Link>
               </li>
+              <li>
+                <Link
+                  href="/terms"
+                  className="text-muted-foreground hover:text-primary transition-colors flex items-center"
+                >
+                  <ArrowRight size={14} className="mr-2" />
+                  Terms of Service
+                </Link>
+              </li>
             </ul>
           </div>
         </div>
@@ -172,6 +208,11 @@ const Footer = () => {
             </p>
             <div className="mt-4 md:mt-0">
               <ul className="flex space-x-6">
+                <li>
+                  <Link href="/terms" className="text-sm text-muted-foreground hover:text-primary transition-colors">
+                    Terms of Service
+                  </Link>
+                </li>
                 <li>
                   <Link
                     href="/privacy-policy"
@@ -186,6 +227,14 @@ const Footer = () => {
                     className="text-sm text-muted-foreground hover:text-primary transition-colors"
                   >
                     Cookie Policy
+                  </Link>
+                </li>
+                <li>
+                  <Link
+                    href="/sitemap.xml"
+                    className="text-sm text-muted-foreground hover:text-primary transition-colors"
+                  >
+                    Sitemap
                   </Link>
                 </li>
               </ul>
