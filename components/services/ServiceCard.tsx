@@ -1,13 +1,11 @@
 import Link from "next/link"
-import Image from "next/image"
-import { ArrowRight, Check } from "lucide-react"
+import { ArrowRight, Check, BarChart3, LineChart, PieChart, Workflow, FileText, Share2 } from "lucide-react"
 
 interface ServiceFeature {
   id: string
   title: string
   description: string
-  icon: string
-  image: string
+  iconName: string
   features: string[]
 }
 
@@ -16,18 +14,30 @@ interface ServiceCardProps {
 }
 
 const ServiceCard = ({ service }: ServiceCardProps) => {
+  // Map service.iconName to the appropriate Lucide icon
+  const getIcon = (iconName: string) => {
+    switch (iconName) {
+      case "ppc":
+        return <BarChart3 className="h-12 w-12 text-primary" />
+      case "cro":
+        return <LineChart className="h-12 w-12 text-primary" />
+      case "analytics":
+        return <PieChart className="h-12 w-12 text-primary" />
+      case "automation":
+        return <Workflow className="h-12 w-12 text-primary" />
+      case "content":
+        return <FileText className="h-12 w-12 text-primary" />
+      case "social":
+        return <Share2 className="h-12 w-12 text-primary" />
+      default:
+        return <BarChart3 className="h-12 w-12 text-primary" />
+    }
+  }
+
   return (
     <div className="bg-card rounded-xl border border-border overflow-hidden hover:border-primary/30 hover:shadow-xl hover:shadow-primary/5 transition-all duration-300 flex flex-col h-full">
-      <div className="relative h-48 overflow-hidden">
-        <Image
-          src={service.image || "/placeholder.svg"}
-          alt={service.title}
-          fill
-          className="object-cover transition-transform duration-500 hover:scale-105"
-        />
-      </div>
-
       <div className="p-6 flex-grow">
+        <div className="mb-4">{getIcon(service.iconName)}</div>
         <h3 className="text-2xl font-bold mb-3">{service.title}</h3>
         <p className="text-muted-foreground mb-6">{service.description}</p>
 

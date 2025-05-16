@@ -18,8 +18,7 @@ export default function ServicesPage() {
       title: "PPC Management",
       description:
         "Data-driven paid advertising campaigns that maximize ROAS across Google, Meta, and other platforms.",
-      icon: "/icons/ppc-icon.png",
-      image: "/digital-marketing-dashboard.png",
+      iconName: "ppc",
       features: [
         "Campaign structure optimization",
         "Advanced audience targeting",
@@ -34,8 +33,7 @@ export default function ServicesPage() {
       title: "Conversion Optimization",
       description:
         "Transform your traffic into customers with our systematic approach to conversion rate optimization.",
-      icon: "/icons/cro-icon.png",
-      image: "/fa7bf0b3c04c47e3992648893251d9c7.jpg",
+      iconName: "cro",
       features: [
         "User journey mapping",
         "Conversion funnel analysis",
@@ -49,8 +47,7 @@ export default function ServicesPage() {
       id: "analytics-setup",
       title: "Analytics Setup",
       description: "Comprehensive tracking implementation to capture every meaningful interaction and conversion.",
-      icon: "/icons/analytics-icon.png",
-      image: "/data-analytics-dashboard.png",
+      iconName: "analytics",
       features: [
         "GA4 implementation",
         "Event tracking setup",
@@ -64,8 +61,7 @@ export default function ServicesPage() {
       id: "marketing-automation",
       title: "Marketing Automation",
       description: "Streamline your marketing processes and nurture leads with personalized automation workflows.",
-      icon: "/icons/automation-icon.png",
-      image: "/marketing-automation-workflow.png",
+      iconName: "automation",
       features: [
         "Email sequence development",
         "Lead scoring implementation",
@@ -79,8 +75,7 @@ export default function ServicesPage() {
       id: "content-strategy",
       title: "Content Strategy",
       description: "Strategic content creation that attracts, engages, and converts your target audience.",
-      icon: "/icons/content-icon.png",
-      image: "/content-marketing-strategy.png",
+      iconName: "content",
       features: [
         "Content audit & gap analysis",
         "Keyword research & mapping",
@@ -94,8 +89,7 @@ export default function ServicesPage() {
       id: "social-media-management",
       title: "Social Media Management",
       description: "Build brand awareness and engagement through strategic social media presence and campaigns.",
-      icon: "/icons/social-icon.png",
-      image: "/a47eb8d21a7ba3ee9c4c27ba050e44d8.jpg",
+      iconName: "social",
       features: [
         "Platform strategy development",
         "Content calendar creation",
