@@ -113,9 +113,11 @@ export default function ServicePage({ params }: ServicePageProps) {
                                 Schedule a free consultation with our {service.title.toLowerCase()} specialists to discuss your goals
                                 and how we can help you achieve them.
                             </p>
-                            <Link href="/contact" className="w-full mb-4">
-                                Schedule a Consultation
-                            </Link>
+                            <Link href="/contact">
+                                <Button asChild size="lg" variant="outline">
+
+                                    Schedule a Consultation
+                                    </Button></Link>
                             <p className="text-sm text-muted-foreground text-center">No obligation, just valuable insights</p>
                         </div>
                     </div>
@@ -169,7 +171,9 @@ export default function ServicePage({ params }: ServicePageProps) {
                         Take the first step toward improved results with our data-driven {service.title.toLowerCase()} services.
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                        <Link href="/contact">Schedule a Consultation</Link>
+                        <Link href="/contact"><Button asChild size="lg" variant="outline">
+
+                            Schedule a Consultation</Button></Link>
                     </div>
                 </div>
             </section>
