@@ -22,7 +22,7 @@ const BeforeAfterCarousel = () => {
         description: "Conversion Rate",
       },
       improvement: "+161%",
-      image: "/25db163c3e020244e7f2353c9ed6b258.jpg",
+      image: "/4b0bc5b5ee6462adc42d0644cdea9880.jpg",
     },
     {
       id: "slide-2",
