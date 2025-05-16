@@ -1,0 +1,123 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: 255, 0, 128;
+  --primary-light: 255, 51, 153;
+  --secondary: 111, 0, 255;
+  --secondary-light: 140, 51, 255;
+  --accent: 0, 213, 255;
+  --background: 10, 10, 20;
+  --foreground: 250, 250, 255;
+  --card: 20, 20, 35;
+  --card-foreground: 250, 250, 255;
+  --border: 40, 40, 60;
+  --muted: 40, 40, 60;
+  --muted-foreground: 180, 180, 200;
+}
+
+body {
+  @apply bg-background text-foreground;
+  font-feature-settings: "rlig" 1, "calt" 1;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @apply font-space font-bold;
+}
+
+p,
+li,
+a,
+button,
+input,
+textarea {
+  @apply font-inter;
+}
+
+.gradient-text {
+  @apply bg-clip-text text-transparent bg-gradient-to-r from-primary to-secondary;
+}
+
+.gradient-border {
+  position: relative;
+}
+
+.gradient-border::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  border-radius: inherit;
+  padding: 2px;
+  background: linear-gradient(to right, rgb(var(--primary)), rgb(var(--secondary)));
+  -webkit-mask: linear-gradient(#fff 0 0) content-box, linear-gradient(#fff 0 0);
+  -webkit-mask-composite: xor;
+  mask-composite: exclude;
+  pointer-events: none;
+}
+
+.animated-bg {
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  background-image: radial-gradient(circle at 0% 0%, rgba(var(--primary), 0.15), transparent 40%),
+    radial-gradient(circle at 100% 0%, rgba(var(--secondary), 0.15), transparent 40%),
+    radial-gradient(circle at 100% 100%, rgba(var(--accent), 0.15), transparent 40%),
+    radial-gradient(circle at 0% 100%, rgba(var(--primary), 0.15), transparent 40%);
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.section-divider {
+  position: relative;
+  height: 120px;
+  overflow: hidden;
+}
+
+.section-divider::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(
+    135deg,
+    transparent 25%,
+    rgb(var(--card)) 25%,
+    rgb(var(--card)) 50%,
+    transparent 50%,
+    transparent 75%,
+    rgb(var(--card)) 75%
+  );
+  background-size: 40px 40px;
+  transform: skewY(-2deg) translateY(-50%);
+}
+
+.grid-pattern {
+  background-image: linear-gradient(rgba(var(--border), 0.3) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(var(--border), 0.3) 1px, transparent 1px);
+  background-size: 20px 20px;
+}
+
+.clip-path-diagonal {
+  clip-path: polygon(0 0, 100% 0, 100% 85%, 0 100%);
+}
+
+.clip-path-diagonal-reverse {
+  clip-path: polygon(0 15%, 100% 0, 100% 100%, 0 100%);
+}

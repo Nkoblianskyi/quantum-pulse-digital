@@ -1,0 +1,1219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumPulse Digital - Data-Driven Digital Marketing Agency</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #6d28d9;
+            --primary-light: #8b5cf6;
+            --primary-dark: #5b21b6;
+            --secondary: #10b981;
+            --background: #ffffff;
+            --text: #1f2937;
+            --text-light: #6b7280;
+        }
+        
+        body {
+            font-family: 'Inter', sans-serif;
+            color: var(--text);
+            overflow-x: hidden;
+        }
+        
+        .gradient-bg {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+        }
+        
+        .gradient-text {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-fill-color: transparent;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 10px 15px -3px rgba(109, 40, 217, 0.3);
+        }
+        
+        .btn-outline {
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 0.375rem;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-outline:hover {
+            background-color: var(--primary);
+            color: white;
+        }
+        
+        .card {
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            background-color: white;
+            transition: all 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-card {
+            border-radius: 0.5rem;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            background-color: white;
+            transition: all 0.3s ease;
+            height: 100%;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .service-icon {
+            width: 64px;
+            height: 64px;
+            margin-bottom: 1rem;
+        }
+        
+        .cookie-banner {
+            position: fixed;
+            bottom: 20px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            max-width: 1200px;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 2rem;
+            background-color: white;
+            border-radius: 0.5rem;
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        
+        .hidden {
+            display: none;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                position: fixed;
+                top: 0;
+                right: 0;
+                width: 70%;
+                height: 100vh;
+                background-color: white;
+                z-index: 1000;
+                transform: translateX(100%);
+                transition: transform 0.3s ease-in-out;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                padding: 2rem;
+            }
+            
+            .mobile-menu.active {
+                transform: translateX(0);
+            }
+            
+            .mobile-menu-overlay {
+                position: fixed;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background-color: rgba(0, 0, 0, 0.5);
+                z-index: 999;
+                display: none;
+            }
+            
+            .mobile-menu-overlay.active {
+                display: block;
+            }
+        }
+        
+        /* Animation classes */
+        .fade-in {
+            animation: fadeIn 0.5s ease-in-out;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .slide-up {
+            animation: slideUp 0.5s ease-in-out;
+        }
+        
+        @keyframes slideUp {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Header -->
+    <header class="fixed w-full bg-white shadow-sm z-50">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="/" class="flex items-center">
+                <span class="text-2xl font-bold gradient-text">QuantumPulse Digital</span>
+            </a>
+            
+            <!-- Desktop Navigation -->
+            <nav class="hidden md:flex space-x-8">
+                <a href="/" class="text-gray-900 font-medium hover:text-purple-600 transition-colors">Home</a>
+                <a href="/services" class="text-gray-600 hover:text-purple-600 transition-colors">Services</a>
+                <a href="/projects" class="text-gray-600 hover:text-purple-600 transition-colors">Projects</a>
+                <a href="/about" class="text-gray-600 hover:text-purple-600 transition-colors">About</a>
+                <a href="/blog" class="text-gray-600 hover:text-purple-600 transition-colors">Blog</a>
+            </nav>
+            
+            <a href="/contact" class="hidden md:block bg-transparent border border-purple-600 text-purple-600 px-5 py-2 rounded-md hover:bg-purple-600 hover:text-white transition-all">
+                Contact Us
+            </a>
+            
+            <!-- Mobile Menu Button -->
+            <button class="md:hidden text-gray-600 focus:outline-none" id="mobile-menu-button">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+                </svg>
+            </button>
+        </div>
+        
+        <!-- Mobile Menu -->
+        <div class="mobile-menu" id="mobile-menu">
+            <div class="flex justify-end">
+                <button class="text-gray-600 focus:outline-none" id="close-menu-button">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+                    </svg>
+                </button>
+            </div>
+            <div class="flex flex-col space-y-4 mt-8">
+                <a href="/" class="text-gray-900 font-medium hover:text-purple-600 transition-colors">Home</a>
+                <a href="/services" class="text-gray-600 hover:text-purple-600 transition-colors">Services</a>
+                <a href="/projects" class="text-gray-600 hover:text-purple-600 transition-colors">Projects</a>
+                <a href="/about" class="text-gray-600 hover:text-purple-600 transition-colors">About</a>
+                <a href="/blog" class="text-gray-600 hover:text-purple-600 transition-colors">Blog</a>
+                <a href="/contact" class="bg-purple-600 text-white px-5 py-2 rounded-md text-center hover:bg-purple-700 transition-colors mt-4">
+                    Contact Us
+                </a>
+            </div>
+        </div>
+        <div class="mobile-menu-overlay" id="mobile-menu-overlay"></div>
+    </header>
+
+    <!-- Impact Hero Section -->
+    <section class="pt-32 pb-20 px-4 gradient-bg">
+        <div class="container mx-auto">
+            <div class="flex flex-col md:flex-row items-center">
+                <div class="md:w-1/2 mb-10 md:mb-0">
+                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-white leading-tight mb-6">
+                        Data-Driven Digital Marketing That Delivers Results
+                    </h1>
+                    <p class="text-lg md:text-xl text-purple-100 mb-8">
+                        We transform your marketing with advanced analytics, strategic insights, and performance-focused campaigns.
+                    </p>
+                    <div class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4">
+                        <a href="/contact" class="btn-primary text-center">
+                            Get a Free Audit
+                        </a>
+                        <a href="/services" class="bg-white text-purple-700 px-6 py-3 rounded-md text-center font-medium hover:bg-gray-100 transition-colors">
+                            Our Services
+                        </a>
+                    </div>
+                </div>
+                <div class="md:w-1/2 flex justify-center">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=400&width=500&query=digital%20marketing%20dashboard%20with%20analytics%20and%20charts" alt="Digital Marketing Dashboard" class="rounded-lg shadow-xl max-w-full h-auto" />
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Assessment Block -->
+    <section class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">How Does Your Digital Marketing Stack Up?</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Take our quick assessment to identify opportunities and gaps in your current digital marketing strategy.
+                </p>
+            </div>
+            
+            <div class="bg-gray-50 rounded-xl p-6 md:p-10 shadow-lg max-w-4xl mx-auto">
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-3">Current Channels</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600">
+                                <span>Paid Search</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600">
+                                <span>Social Media</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600">
+                                <span>Email Marketing</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600">
+                                <span>Content Marketing</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600">
+                                <span>SEO</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-3">Monthly Budget</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center space-x-2">
+                                <input type="radio" name="budget" class="form-radio h-5 w-5 text-purple-600">
+                                <span>$1K - $5K</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="radio" name="budget" class="form-radio h-5 w-5 text-purple-600">
+                                <span>$5K - $10K</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="radio" name="budget" class="form-radio h-5 w-5 text-purple-600">
+                                <span>$10K - $25K</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="radio" name="budget" class="form-radio h-5 w-5 text-purple-600">
+                                <span>$25K - $50K</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="radio" name="budget" class="form-radio h-5 w-5 text-purple-600">
+                                <span>$50K+</span>
+                            </label>
+                        </div>
+                    </div>
+                    
+                    <div class="bg-white p-6 rounded-lg shadow-sm">
+                        <h3 class="text-xl font-semibold mb-3">Primary Goals</h3>
+                        <div class="space-y-2">
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600">
+                                <span>Lead Generation</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600">
+                                <span>E-commerce Sales</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600">
+                                <span>Brand Awareness</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600">
+                                <span>Website Traffic</span>
+                            </label>
+                            <label class="flex items-center space-x-2">
+                                <input type="checkbox" class="form-checkbox h-5 w-5 text-purple-600">
+                                <span>Customer Retention</span>
+                            </label>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="text-center">
+                    <button class="btn-primary">
+                        Get Your Assessment
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Service Grid -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-16">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Our Integrated Marketing Systems</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    We don't just offer services - we build comprehensive marketing systems that work together to drive measurable results.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Service 1 -->
+                <div class="service-card p-6">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=64&width=64&query=paid%20search%20icon" alt="Paid Search Icon" class="service-icon" />
+                    <h3 class="text-xl font-bold mb-3">Paid Search Optimization</h3>
+                    <p class="text-gray-600 mb-4">
+                        Data-driven PPC campaigns that maximize ROI through advanced targeting, bid management, and continuous optimization.
+                    </p>
+                    <a href="/services/ppc-management" class="text-purple-600 font-medium hover:text-purple-800 transition-colors inline-flex items-center">
+                        Learn more
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="service-card p-6">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=64&width=64&query=conversion%20rate%20optimization%20icon" alt="CRO Icon" class="service-icon" />
+                    <h3 class="text-xl font-bold mb-3">Conversion Rate Optimization</h3>
+                    <p class="text-gray-600 mb-4">
+                        Transform visitors into customers with data-backed CRO strategies, A/B testing, and user experience enhancements.
+                    </p>
+                    <a href="/services/conversion-optimization" class="text-purple-600 font-medium hover:text-purple-800 transition-colors inline-flex items-center">
+                        Learn more
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="service-card p-6">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=64&width=64&query=analytics%20dashboard%20icon" alt="Analytics Icon" class="service-icon" />
+                    <h3 class="text-xl font-bold mb-3">Analytics & Insights</h3>
+                    <p class="text-gray-600 mb-4">
+                        Unlock the power of your data with custom analytics setups, dashboards, and actionable insights that drive strategy.
+                    </p>
+                    <a href="/services/analytics" class="text-purple-600 font-medium hover:text-purple-800 transition-colors inline-flex items-center">
+                        Learn more
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="service-card p-6">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=64&width=64&query=marketing%20automation%20icon" alt="Automation Icon" class="service-icon" />
+                    <h3 class="text-xl font-bold mb-3">Marketing Automation</h3>
+                    <p class="text-gray-600 mb-4">
+                        Scale your marketing efforts with intelligent automation systems that nurture leads and drive conversions.
+                    </p>
+                    <a href="/services/marketing-automation" class="text-purple-600 font-medium hover:text-purple-800 transition-colors inline-flex items-center">
+                        Learn more
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="service-card p-6">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=64&width=64&query=content%20marketing%20icon" alt="Content Icon" class="service-icon" />
+                    <h3 class="text-xl font-bold mb-3">Content Strategy</h3>
+                    <p class="text-gray-600 mb-4">
+                        Create compelling, data-informed content that resonates with your audience and drives engagement throughout the funnel.
+                    </p>
+                    <a href="/services/content-strategy" class="text-purple-600 font-medium hover:text-purple-800 transition-colors inline-flex items-center">
+                        Learn more
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="service-card p-6">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=64&width=64&query=social%20media%20marketing%20icon" alt="Social Icon" class="service-icon" />
+                    <h3 class="text-xl font-bold mb-3">Social Media Strategy</h3>
+                    <p class="text-gray-600 mb-4">
+                        Build meaningful connections and drive engagement with strategic social media campaigns backed by analytics.
+                    </p>
+                    <a href="/services/social-media" class="text-purple-600 font-medium hover:text-purple-800 transition-colors inline-flex items-center">
+                        Learn more
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                            <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Data Visualization Section -->
+    <section class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">The Power of Data Visualization</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    We transform complex marketing data into clear, actionable insights that drive strategic decisions.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-10 items-center">
+                <div>
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=400&width=600&query=marketing%20data%20visualization%20dashboard%20with%20charts%20and%20graphs" alt="Data Visualization Dashboard" class="rounded-lg shadow-lg w-full" />
+                </div>
+                
+                <div class="space-y-6">
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">Performance Tracking</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Real-time dashboards that track KPIs across all channels, providing immediate visibility into campaign performance.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">Trend Analysis</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Identify patterns and trends in your marketing data to anticipate market shifts and optimize campaigns proactively.
+                        </p>
+                    </div>
+                    
+                    <div class="bg-gray-50 p-6 rounded-lg">
+                        <div class="flex items-center mb-3">
+                            <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 20h5v-2a3 3 0 00-5.356-1.857M17 20H7m10 0v-2c0-.656-.126-1.283-.356-1.857M7 20H2v-2a3 3 0 015.356-1.857M7 20v-2c0-.656.126-1.283.356-1.857m0 0a5.002 5.002 0 019.288 0M15 7a3 3 0 11-6 0 3 3 0 016 0zm6 3a2 2 0 11-4 0 2 2 0 014 0zM7 10a2 2 0 11-4 0 2 2 0 014 0z" />
+                                </svg>
+                            </div>
+                            <h3 class="text-xl font-semibold">Audience Insights</h3>
+                        </div>
+                        <p class="text-gray-600">
+                            Visualize customer segments, behaviors, and journeys to create more targeted and effective marketing strategies.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Before & After Carousel -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Transformative Results</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    See the measurable impact our data-driven strategies have delivered for our clients.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Result Card 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm font-medium text-purple-600 bg-purple-100 px-3 py-1 rounded-full">E-commerce</span>
+                            <div class="flex items-center">
+                                <span class="text-green-600 font-bold text-xl">+143%</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">ROAS Improvement</h3>
+                        <p class="text-gray-600 mb-4">
+                            Restructured Google Ads account with advanced audience targeting and bidding strategies.
+                        </p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Before: 2.1x ROAS</span>
+                            <span>After: 5.1x ROAS</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Result Card 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm font-medium text-purple-600 bg-purple-100 px-3 py-1 rounded-full">SaaS</span>
+                            <div class="flex items-center">
+                                <span class="text-green-600 font-bold text-xl">+87%</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Conversion Rate</h3>
+                        <p class="text-gray-600 mb-4">
+                            Implemented CRO program with A/B testing and funnel optimization for trial signups.
+                        </p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Before: 1.8% CVR</span>
+                            <span>After: 3.4% CVR</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Result Card 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <div class="p-6">
+                        <div class="flex justify-between items-center mb-4">
+                            <span class="text-sm font-medium text-purple-600 bg-purple-100 px-3 py-1 rounded-full">B2B</span>
+                            <div class="flex items-center">
+                                <span class="text-green-600 font-bold text-xl">-32%</span>
+                            </div>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Cost Per Lead</h3>
+                        <p class="text-gray-600 mb-4">
+                            Developed integrated content and paid strategy targeting high-value decision makers.
+                        </p>
+                        <div class="flex justify-between text-sm text-gray-500">
+                            <span>Before: $125 CPL</span>
+                            <span>After: $85 CPL</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Case Study Snapshot -->
+    <section class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Featured Case Study</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    See how we transformed an e-commerce brand's digital marketing strategy to achieve record-breaking results.
+                </p>
+            </div>
+            
+            <div class="bg-gray-50 rounded-xl overflow-hidden shadow-lg">
+                <div class="grid grid-cols-1 lg:grid-cols-2">
+                    <div class="p-8 lg:p-12">
+                        <span class="inline-block px-4 py-1 bg-purple-100 text-purple-700 rounded-full text-sm font-medium mb-6">E-commerce Success Story</span>
+                        <h3 class="text-2xl md:text-3xl font-bold mb-4">How We Increased ROAS by 143% for an E-commerce Brand</h3>
+                        <div class="space-y-4 mb-6">
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-green-100 flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-green-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-1">The Challenge</h4>
+                                    <p class="text-gray-600">
+                                        Inefficient ad spend with low ROAS across Google and Meta platforms, limiting growth potential.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-blue-100 flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-1">Our Approach</h4>
+                                    <p class="text-gray-600">
+                                        Complete account restructure, advanced audience segmentation, and data-driven bidding strategies.
+                                    </p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start">
+                                <div class="flex-shrink-0 w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-4">
+                                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                                    </svg>
+                                </div>
+                                <div>
+                                    <h4 class="text-lg font-semibold mb-1">The Results</h4>
+                                    <p class="text-gray-600">
+                                        143% increase in ROAS, 52% increase in conversion rate, and 28% reduction in CPA.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <a href="/projects/ecommerce-ppc-optimization" class="btn-primary inline-flex items-center">
+                            Read Full Case Study
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-2" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                    
+                    <div class="bg-cover bg-center h-64 lg:h-auto" style="background-image: url('https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=500&width=600&query=ecommerce%20marketing%20dashboard%20with%20growth%20charts')"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Client Journey Map -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Your Journey to Marketing Success</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Our proven process ensures we deliver consistent results for every client.
+                </p>
+            </div>
+            
+            <div class="relative">
+                <!-- Journey Line -->
+                <div class="hidden md:block absolute left-1/2 top-0 bottom-0 w-1 bg-purple-200 transform -translate-x-1/2"></div>
+                
+                <div class="space-y-12 relative">
+                    <!-- Step 1 -->
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+                            <h3 class="text-2xl font-bold mb-3">Discovery & Analysis</h3>
+                            <p class="text-gray-600">
+                                We start by understanding your business goals, analyzing your current marketing performance, and identifying opportunities for growth.
+                            </p>
+                        </div>
+                        <div class="md:w-12 flex justify-center">
+                            <div class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-xl z-10">1</div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 md:text-left">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=200&width=300&query=marketing%20analysis%20meeting" alt="Discovery Phase" class="rounded-lg shadow-md" />
+                        </div>
+                    </div>
+                    
+                    <!-- Step 2 -->
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right order-1 md:order-2">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=200&width=300&query=marketing%20strategy%20planning" alt="Strategy Development" class="rounded-lg shadow-md" />
+                        </div>
+                        <div class="md:w-12 flex justify-center order-2 md:order-3">
+                            <div class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-xl z-10">2</div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 md:text-left order-3 md:order-1">
+                            <h3 class="text-2xl font-bold mb-3">Strategy Development</h3>
+                            <p class="text-gray-600">
+                                We create a customized marketing strategy aligned with your business objectives, focusing on the channels and tactics that will drive the best results.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 3 -->
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+                            <h3 class="text-2xl font-bold mb-3">Implementation & Optimization</h3>
+                            <p class="text-gray-600">
+                                Our team executes the strategy with precision, continuously monitoring performance and making data-driven optimizations to maximize results.
+                            </p>
+                        </div>
+                        <div class="md:w-12 flex justify-center">
+                            <div class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-xl z-10">3</div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 md:text-left">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=200&width=300&query=digital%20marketing%20implementation" alt="Implementation Phase" class="rounded-lg shadow-md" />
+                        </div>
+                    </div>
+                    
+                    <!-- Step 4 -->
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right order-1 md:order-2">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=200&width=300&query=marketing%20reporting%20dashboard" alt="Reporting & Analysis" class="rounded-lg shadow-md" />
+                        </div>
+                        <div class="md:w-12 flex justify-center order-2 md:order-3">
+                            <div class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-xl z-10">4</div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 md:text-left order-3 md:order-1">
+                            <h3 class="text-2xl font-bold mb-3">Reporting & Analysis</h3>
+                            <p class="text-gray-600">
+                                We provide comprehensive reporting and insights, ensuring complete transparency and helping you understand the impact of our work.
+                            </p>
+                        </div>
+                    </div>
+                    
+                    <!-- Step 5 -->
+                    <div class="flex flex-col md:flex-row items-center">
+                        <div class="md:w-1/2 md:pr-12 mb-6 md:mb-0 md:text-right">
+                            <h3 class="text-2xl font-bold mb-3">Refinement & Growth</h3>
+                            <p class="text-gray-600">
+                                Based on performance data and market changes, we continuously refine our approach to drive sustainable growth and maximize your ROI.
+                            </p>
+                        </div>
+                        <div class="md:w-12 flex justify-center">
+                            <div class="w-12 h-12 rounded-full bg-purple-600 text-white flex items-center justify-center font-bold text-xl z-10">5</div>
+                        </div>
+                        <div class="md:w-1/2 md:pl-12 md:text-left">
+                            <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=200&width=300&query=business%20growth%20chart" alt="Growth Phase" class="rounded-lg shadow-md" />
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Founder Interview Section -->
+    <section class="py-20 px-4 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">A Conversation With Our Founder</h2>
+                <p class="text-lg text-purple-100 max-w-3xl mx-auto">
+                    Learn about the vision and journey behind QuantumPulse Digital
+                </p>
+            </div>
+            
+            <div class="bg-white text-gray-800 rounded-xl p-8 md:p-10 shadow-xl max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <div>
+                        <h3 class="text-lg font-bold text-purple-700">Q: What inspired you to start QuantumPulse Digital?</h3>
+                        <p class="mt-2">
+                            I saw a gap in the market where agencies were either too focused on creative without data backing, or too analytical without strategic vision. I wanted to build an agency that truly integrated both - using data to drive creative decisions and measuring everything with precision. Our name reflects this approach: the 'Quantum' represents our data precision, while 'Pulse' represents the dynamic, living nature of digital marketing.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold text-purple-700">Q: What were some of the early challenges you faced?</h3>
+                        <p class="mt-2">
+                            The biggest challenge was convincing clients to invest in proper measurement and analytics infrastructure before jumping into tactics. Many wanted immediate results without building the foundation first. We had to educate the market on why this approach was essential for long-term success. Those early clients who trusted our process are still with us today and have seen tremendous growth.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold text-purple-700">Q: How has your approach to marketing evolved since founding the company?</h3>
+                        <p class="mt-2">
+                            We've always been data-driven, but the tools and capabilities have evolved dramatically. Initially, we were piecing together insights from various platforms. Now, we've built proprietary systems that integrate data from multiple sources to provide a holistic view of performance. We've also expanded our focus on marketing automation and AI-driven optimization as these technologies have matured.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold text-purple-700">Q: What sets QuantumPulse Digital apart from other agencies?</h3>
+                        <p class="mt-2">
+                            Three things: First, our integrated approach - we don't just run campaigns, we build marketing systems that work together. Second, our transparency - clients have full visibility into what we're doing and why. And third, our team structure - we pair data analysts with creative strategists on every account to ensure both perspectives are represented in all decisions.
+                        </p>
+                    </div>
+                    
+                    <div>
+                        <h3 class="text-lg font-bold text-purple-700">Q: What's your vision for the future of digital marketing?</h3>
+                        <p class="mt-2">
+                            I believe we're moving toward a more personalized, predictive marketing landscape where AI will help us anticipate customer needs before they even express them. Privacy changes will continue to challenge traditional targeting, making first-party data and direct relationships with customers more valuable than ever. Agencies that can help clients navigate this complexity while maintaining a human touch will thrive.
+                        </p>
+                    </div>
+                    
+                    <div class="pt-4 border-t border-gray-200">
+                        <p class="italic text-gray-600">
+                            "Our mission is to transform how businesses approach digital marketing - moving from guesswork to precision, from tactics to strategy, and from spending to investing with clear returns."
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Insights -->
+    <section class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Market Insights & Trends</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Stay ahead of the curve with our latest observations on the digital marketing landscape.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                <!-- Insight 1 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Privacy-First Marketing</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        With third-party cookies phasing out and privacy regulations tightening, first-party data strategies are becoming essential for targeting and personalization.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>Updated May 2025</span>
+                    </div>
+                </div>
+                
+                <!-- Insight 2 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 10V3L4 14h7v7l9-11h-7z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">AI-Powered Optimization</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        AI is revolutionizing campaign optimization, enabling real-time adjustments and predictive modeling that significantly outperforms manual management.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                        </svg>
+                        <span>Updated April 2025</span>
+                    </div>
+                </div>
+                
+                <!-- Insight 3 -->
+                <div class="bg-gray-50 rounded-lg p-6 shadow-sm">
+                    <div class="flex items-center mb-4">
+                        <div class="w-10 h-10 rounded-full bg-purple-100 flex items-center justify-center mr-3">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z" />
+                            </svg>
+                        </div>
+                        <h3 class="text-xl font-bold">Rising CPMs & Efficiency</h3>
+                    </div>
+                    <p class="text-gray-600 mb-4">
+                        Ad costs continue to rise across platforms, making campaign efficiency and conversion rate optimization more critical than ever for maintaining ROAS.
+                    </p>
+                    <div class="flex items-center text-sm text-gray-500">
+                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-1 text-purple-600" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0  stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                        <span>Updated March 2025</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Blog Preview -->
+    <section class="py-20 px-4 bg-gray-50">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Latest from Our Blog</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Insights, strategies, and industry updates to help you stay ahead in digital marketing.
+                </p>
+            </div>
+            
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+                <!-- Blog Post 1 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=200&width=400&query=first%20party%20data%20marketing" alt="First Party Data" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="text-sm font-medium text-purple-600 bg-purple-100 px-3 py-1 rounded-full">Strategy</span>
+                            <span class="text-sm text-gray-500 ml-3">May 12, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">The Future of First-Party Data in Digital Marketing</h3>
+                        <p class="text-gray-600 mb-4">
+                            With third-party cookies disappearing, learn how to build a robust first-party data strategy that enhances targeting while respecting privacy.
+                        </p>
+                        <a href="/blog/future-of-first-party-data" class="text-purple-600 font-medium hover:text-purple-800 transition-colors inline-flex items-center">
+                            Read article
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 2 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=200&width=400&query=conversion%20rate%20optimization%20techniques" alt="CRO Techniques" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="text-sm font-medium text-purple-600 bg-purple-100 px-3 py-1 rounded-full">Optimization</span>
+                            <span class="text-sm text-gray-500 ml-3">April 28, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Conversion Rate Optimization: Beyond the Basics</h3>
+                        <p class="text-gray-600 mb-4">
+                            Advanced CRO techniques that go beyond button colors and headline tests to create meaningful improvements in your conversion funnel.
+                        </p>
+                        <a href="/blog/advanced-cro-techniques" class="text-purple-600 font-medium hover:text-purple-800 transition-colors inline-flex items-center">
+                            Read article
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- Blog Post 3 -->
+                <div class="bg-white rounded-lg shadow-md overflow-hidden">
+                    <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/placeholder-ob7miW3mUreePYfXdVwkpFWHthzoR5.svg?height=200&width=400&query=meta%20ads%20cpm%20trends" alt="Meta CPM Trends" class="w-full h-48 object-cover" />
+                    <div class="p-6">
+                        <div class="flex items-center mb-3">
+                            <span class="text-sm font-medium text-purple-600 bg-purple-100 px-3 py-1 rounded-full">Paid Social</span>
+                            <span class="text-sm text-gray-500 ml-3">April 15, 2025</span>
+                        </div>
+                        <h3 class="text-xl font-bold mb-2">Meta CPMs Grew 11% in Q1 2025: What This Means for Advertisers</h3>
+                        <p class="text-gray-600 mb-4">
+                            Analysis of rising ad costs on Meta platforms and strategies to maintain ROAS despite increasing competition.
+                        </p>
+                        <a href="/blog/meta-cpm-trends-2025" class="text-purple-600 font-medium hover:text-purple-800 transition-colors inline-flex items-center">
+                            Read article
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 ml-1" viewBox="0 0 20 20" fill="currentColor">
+                                <path fill-rule="evenodd" d="M12.293 5.293a1 1 0 011.414 0l4 4a1 1 0 010 1.414l-4 4a1 1 0 01-1.414-1.414L14.586 11H3a1 1 0 110-2h11.586l-2.293-2.293a1 1 0 010-1.414z" clip-rule="evenodd" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="text-center mt-10">
+                <a href="/blog" class="btn-outline">
+                    View All Articles
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="py-20 px-4 bg-white">
+        <div class="container mx-auto">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold mb-4">Frequently Asked Questions</h2>
+                <p class="text-lg text-gray-600 max-w-3xl mx-auto">
+                    Get answers to common questions about our services and approach.
+                </p>
+            </div>
+            
+            <div class="max-w-4xl mx-auto">
+                <div class="space-y-6">
+                    <!-- FAQ Item 1 -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3">What makes your agency different from others?</h3>
+                        <p class="text-gray-600">
+                            We combine deep data analytics with strategic creativity. Unlike agencies that focus on either metrics or creative, we integrate both approaches. We also build comprehensive marketing systems rather than isolated campaigns, ensuring all elements work together to drive results.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 2 -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3">How long before I see results from digital marketing?</h3>
+                        <p class="text-gray-600">
+                            Initial results typically appear within 30-60 days, with significant improvements by the 90-day mark. However, this varies based on your starting point, industry, competition, and budget. We provide clear timelines and expectations during our discovery process.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 3 -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3">What budget do I need to work with your agency?</h3>
+                        <p class="text-gray-600">
+                            Our services start at $5,000 per month, with ad spend managed separately. We're transparent about where your investment goes and work with you to determine the optimal budget to achieve your goals. We focus on ROI rather than just spending.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 4 -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3">Do you offer one-time projects or only ongoing services?</h3>
+                        <p class="text-gray-600">
+                            While we specialize in ongoing partnerships that drive long-term growth, we do offer strategic projects like marketing audits, analytics setup, and strategy development. These projects often serve as the foundation for ongoing relationships.
+                        </p>
+                    </div>
+                    
+                    <!-- FAQ Item 5 -->
+                    <div class="bg-gray-50 rounded-lg p-6">
+                        <h3 class="text-xl font-bold mb-3">How do you measure success and report on results?</h3>
+                        <p class="text-gray-600">
+                            We establish clear KPIs aligned with your business goals at the outset. Our reporting combines automated dashboards for real-time monitoring with detailed monthly analysis that explains what the data means and our strategic recommendations.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Visual CTA -->
+    <section class="py-20 px-4 bg-gradient-to-br from-purple-600 to-purple-800 text-white">
+        <div class="container mx-auto">
+            <div class="max-w-4xl mx-auto text-center">
+                <h2 class="text-3xl md:text-4xl font-bold mb-6">Ready to Transform Your Digital Marketing?</h2>
+                <p class="text-xl text-purple-100 mb-8">
+                    Get a free digital marketing audit and discover opportunities to improve your performance.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center space-y-4 sm:space-y-0 sm:space-x-4">
+                    <a href="/contact" class="bg-white text-purple-700 px-8 py-4 rounded-md text-lg font-medium hover:bg-gray-100 transition-colors">
+                        Get Your Free Audit
+                    </a>
+                    <a href="/services" class="border-2 border-white text-white px-8 py-4 rounded-md text-lg font-medium hover:bg-white hover:bg-opacity-10 transition-colors">
+                        Explore Our Services
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white py-12 px-4">
+        <div class="container mx-auto">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-2xl font-bold mb-4">QuantumPulse Digital</h3>
+                    <p class="text-gray-400 mb-4">
+                        Data-driven digital marketing that delivers measurable results for your business.
+                    </p>
+                    <div class="flex space-x-4">
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M22.675 0h-21.35c-.732 0-1.325.593-1.325 1.325v21.351c0 .731.593 1.324 1.325 1.324h11.495v-9.294h-3.128v-3.622h3.128v-2.671c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12v9.293h6.116c.73 0 1.323-.593 1.323-1.325v-21.35c0-.732-.593-1.325-1.325-1.325z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm6.066 9.645c.183 4.04-2.83 8.544-8.164 8.544-1.622 0-3.131-.476-4.402-1.291 1.524.18 3.045-.244 4.252-1.189-1.256-.023-2.317-.854-2.684-1.995.451.086.895.061 1.298-.049-1.381-.278-2.335-1.522-2.304-2.853.388.215.83.344 1.301.359-1.279-.855-1.641-2.544-.889-3.835 1.416 1.738 3.533 2.881 5.92 3.001-.419-1.796.944-3.527 2.799-3.527.825 0 1.572.349 2.096.907.654-.128 1.27-.368 1.824-.697-.215.671-.67 1.233-1.263 1.589.581-.07 1.135-.224 1.649-.453-.384.578-.87 1.084-1.433 1.489z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
+                            </svg>
+                        </a>
+                        <a href="#" class="text-gray-400 hover:text-white transition-colors">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24">
+                                <path d="M12 0c-6.627 0-12 5.373-12 12s5.373 12 12 12 12-5.373 12-12-5.373-12-12-12zm-2 16h-2v-6h2v6zm-1-6.891c-.607 0-1.1-.496-1.1-1.109 0-.612.492-1.109 1.1-1.109s1.1.497 1.1 1.109c0 .613-.493 1.109-1.1 1.109zm8 6.891h-1.998v-2.861c0-1.881-2.002-1.722-2.002 0v2.861h-2v-6h2v1.093c.872-1.616 4-1.736 4 1.548v3.359z"/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Services</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/services/ppc-management" class="text-gray-400 hover:text-white transition-colors">Paid Search Optimization</a></li>
+                        <li><a href="/services/conversion-optimization" class="text-gray-400 hover:text-white transition-colors">Conversion Rate Optimization</a></li>
+                        <li><a href="/services/analytics" class="text-gray-400 hover:text-white transition-colors">Analytics & Insights</a></li>
+                        <li><a href="/services/marketing-automation" class="text-gray-400 hover:text-white transition-colors">Marketing Automation</a></li>
+                        <li><a href="/services/content-strategy" class="text-gray-400 hover:text-white transition-colors">Content Strategy</a></li>
+                        <li><a href="/services/social-media" class="text-gray-400 hover:text-white transition-colors">Social Media Strategy</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Resources</h4>
+                    <ul class="space-y-2">
+                        <li><a href="/blog" class="text-gray-400 hover:text-white transition-colors">Blog</a></li>
+                        <li><a href="/projects" class="text-gray-400 hover:text-white transition-colors">Case Studies</a></li>
+                        <li><a href="/about" class="text-gray-400 hover:text-white transition-colors">About Us</a></li>
+                        <li><a href="/contact" class="text-gray-400 hover:text-white transition-colors">Contact</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Privacy Policy</a></li>
+                        <li><a href="#" class="text-gray-400 hover:text-white transition-colors">Terms of Service</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4 class="text-lg font-semibold mb-4">Contact Us</h4>
+                    <ul class="space-y-2 text-gray-400">
+                        <li class="flex items-start">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 mt-0.5 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+                            </svg>
+                            <span>123 Marketing St, Suite 100<br />San Francisco, CA 94103</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z" />
+                            </svg>
+                            <span>(555) 123-4567</span>
+                        </li>
+                        <li class="flex items-center">
+                            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 mr-2 text-purple-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                            </svg>
+                            <span>info@quantumpulsedigital.com</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="border-t border-gray-800 mt-12 pt-8 text-center text-gray-400">
+                <p>&copy; 2025 QuantumPulse Digital. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Cookie Banner -->
+    <div class="cookie-banner hidden" id="cookie-banner">
+        <div>
+            <p class="text-gray-800 mr-4">
+                We use cookies to enhance your experience. By continuing to visit this site you agree to our use of cookies.
+            </p>
+        </div>
+        <div class="flex flex-col sm:flex-row space-y-2 sm:space-y-0 sm:space-x-2">
+            <button id="accept-cookies" class="bg-transparent border border-purple-600 text-purple-600 px-4 py-2 rounded hover:bg-purple-600 hover:text-white transition-colors">
+                Accept
+            </button>
+        </div>
+    </div>
+
+    <script>
+        // Mobile Menu Toggle
+        document.getElementById('mobile-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.add('active');
+            document.getElementById('mobile-menu-overlay').classList.add('active');
+        });
+        
+        document.getElementById('close-menu-button').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('active');
+            document.getElementById('mobile-menu-overlay').classList.remove('active');
+        });
+        
+        document.getElementById('mobile-menu-overlay').addEventListener('click', function() {
+            document.getElementById('mobile-menu').classList.remove('active');
+            document.getElementById('mobile-menu-overlay').classList.remove('active');
+        });
+        
+        // Cookie Banner
+        window.addEventListener('load', function() {
+            if (!localStorage.getItem('cookiesAccepted')) {
+                setTimeout(function() {
+                    document.getElementById('cookie-banner').classList.remove('hidden');
+                }, 1000);
+            }
+        });
+        
+        document.getElementById('accept-cookies').addEventListener('click', function() {
+            localStorage.setItem('cookiesAccepted', 'true');
+            document.getElementById('cookie-banner').classList.add('hidden');
+        });
+        
+        // Scroll to top on navigation
+        document.querySelectorAll('a[href^="/"]').forEach(anchor => {
+            anchor.addEventListener('click', function(e) {
+                // Only prevent default if it's not an external link
+                if (this.getAttribute('href').startsWith('/')) {
+                    e.preventDefault();
+                    
+                    // Store the href
+                    const href = this.getAttribute('href');
+                    
+                    // Scroll to top
+                    window.scrollTo({
+                        top: 0,
+                        behavior: 'instant'
+                    });
+                    
+                    // Navigate after a small delay to ensure scroll happens
+                    setTimeout(() => {
+                        window.location.href = href;
+                    }, 10);
+                }
+            });
+        });
+    </script>
+</body>
+</html>
