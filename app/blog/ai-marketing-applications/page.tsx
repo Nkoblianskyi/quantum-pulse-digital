@@ -1,6 +1,5 @@
 import BlogPostHeader from "@/components/blog/BlogPostHeader"
 import BlogContent from "@/components/blog/BlogContent"
-import SharePost from "@/components/blog/SharePost"
 import RelatedPosts from "@/components/blog/RelatedPosts"
 import NewsletterSignup from "@/components/blog/NewsletterSignup"
 import type { Metadata } from "next"
@@ -445,7 +444,6 @@ export default function AIMarketingBlogPost() {
           </p>
         </BlogContent>
 
-        <SharePost title={postData.title} url={postData.url} />
 
         <RelatedPosts posts={relatedPosts} />
       </div>
