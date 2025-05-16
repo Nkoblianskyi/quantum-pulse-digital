@@ -12,12 +12,6 @@ export default function ContactCTA() {
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
             href="/contact"
-            className="px-8 py-3 bg-primary hover:bg-primary-light text-white font-medium rounded-full transition-colors duration-300"
-          >
-            Contact Us
-          </Link>
-          <Link
-            href="/contact"
             className="px-8 py-3 bg-transparent hover:bg-card border border-primary text-primary hover:text-primary-light font-medium rounded-full transition-colors duration-300"
           >
             Contact Us
